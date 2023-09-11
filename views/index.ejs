@@ -1,0 +1,66 @@
+<%- include("partials/header.ejs") %>
+
+<div class="deadlines-bar">
+    <h1>Deadlines</h1>
+    <div class="deadlines">
+      <% if (Object.keys(locals.deadlineTasks).length > 0){ %>
+        <% for (let key in deadlineTasks) { %>
+            <div class="item-deadline">
+                <h2><%= key %></h2>
+                <% for (let i=0; i < deadlineTasks[key].length; i++){ %>
+                    <p><%= deadlineTasks[key][i] %></p>
+                <% } %>    
+            </div>
+        <% } %>
+      <% }else{ %>
+        <p>No deadlines! :) </p>
+      <% } %>
+    </div>
+    <form action="/deadlineAdded" class="deadline-item" method="post">
+      <input type="date" name="newDeadlineDate">
+      <input type="text" name="newDeadlineTask" placeholder="New Deadline" autocomplete="off">
+      <input type="submit" value="Add Deadline">
+    </form>
+</div>
+
+<section>
+    <div class="time">
+        <div class="current-date">
+            <h1><%= `${date[0]}, ${date[1]} ${date[2]}`%></h1>
+        </div>
+        <div class="flipdown"></div>
+    </div>
+    <div class="sections">
+        <% if(locals.totalSections > 0){ %>
+            <%# fix it so that each task is specific to its own section %>
+            <% for (var section=1; section <= totalSections; section++) {%>
+                <div class="section">
+                    <p class="section-title" contenteditable="true">Section <%= section %></p>
+                    <div class="content">
+                        <% if (locals.sectionTasks[section].length > 0) { %>
+                            <% for (let task=0; task < sectionTasks[section].length; task++){ %>
+                                <div class="item-section">
+                                    <input type="checkbox" class="check">
+                                    <p><%= sectionTasks[section][task] %></p>
+                                    <i class="fa-solid fa-xmark"></i>
+                                </div>
+                            <% } %>
+                        <% } else { %>
+                            <p>No tasks!</p>
+                        <% } %>
+                    </div>
+                    <form action="/todoAdded" class="todo-item" method="post">
+                        <input type="hidden" name="section" value="<%= section %>">
+                        <input type="text" name="newToDo" placeholder="Enter New Task" autocomplete="off">
+                        <input type="submit"/>
+                    </form>
+                </div>
+            <% } %>     
+        <% }%>
+        <form action="/sectionAdded" class="section-item" method="post">
+            <button type="submit" class="new-section">+ Add section</button>
+        </form>
+    </div>
+</section>
+
+<%- include("partials/footer.ejs") %>

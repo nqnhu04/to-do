@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body,
+main{
+    font-family: 'Crimson Text', serif;
+    height: 100%;
+    width: 100%;
+    background-color: #272829;
+    display: flex;  
+    overflow: hidden;
+}
+
+h1, .section-title{
+    font-family: 'Unica One', cursive;
+}
+
+input[type="text"] {
+    font-family: 'Crimson Text', serif;
+    font-size: 1rem;
+}
+
+h1{
+    font-size: 2rem;
+}
+
+.section-title{
+    font-size: 1.2rem;
+}
+
+.sidebar{
+    height: 100%;
+    width: 2vw;
+    background-color: #272829;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar a{
+    padding: 5px;
+    font-size: 1rem;
+    text-decoration: none;
+    color: white;
+    border-radius: 6px;
+}
+
+.sidebar .home{
+    margin-bottom: 10px;
+}
+
+.sidebar a:hover{
+    background-color: white;
+    color: #272829;
+}
+
+input[type=checkbox]:checked + p{
+    text-decoration: line-through;
+    font-style: italic;
+}
+
+.deadlines-bar{
+    height: 100%;
+    width: 12vw;
+    padding: 20px;
+    background-color: white;
+}
+
+section{
+    flex-direction: column;
+}
+
+.time{
+    display: flex;
+    margin-left: 30px;
+}
+
+.current-date{
+    background-color: white;
+    width: 25vw;
+    height: 8vh;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    border-radius: 25px;
+    display: flex;
+}
+
+.current-date:hover{
+    color: white;
+    background-color: #272829;
+    transform: scale(1.005);
+    transition: .5s ease;
+    box-shadow: 0px 0px 9px -4px rgba(225,225,225,0.85);
+    -webkit-box-shadow: 0px 0px 9px -4px rgba(225,225,225,0.85);
+    -moz-box-shadow: 0px 0px 9px -4px rgba(225,225,225,0.85);
+}
+
+.flipdown{
+
+}
+
+.sections{
+    margin-left: 20px;
+    padding: 0 10px;
+    max-width: 83.5vw;
+    max-height: 90vh;
+    overflow: auto;
+    display: flex;
+}
+
+.section{
+    background-color: white;
+    padding: 20px;
+    margin: 20px 20px 24px;
+    width: 20vw;
+    border-radius: 25px;
+    box-shadow: 0px 0px 9px -4px rgba(225,225,225,0.85);
+    -webkit-box-shadow: 0px 0px 9px -4px rgba(225,225,225,0.85);
+    -moz-box-shadow: 0px 0px 9px -4px rgba(225,225,225,0.85);
+    max-height: 100%;
+    transition: .5s ease;
+    flex-shrink: 0;
+    align-self: flex-start;
+}
+
+.section:hover{
+    transform: scale(1.05);
+    transition: .5s ease;
+}
+
+.content{
+    max-height: 62vh;
+    max-width: 100%;
+    margin: 10px 0;
+    padding: 0 10px;
+    overflow: auto;
+    align-items: center;
+}
+
+.new-section{
+    background-color: white;
+    opacity: .4;
+    border-radius: 25px;
+    text-align: left;
+    margin: 20px;
+    width: 300px;
+    padding: 20px;
+    cursor: pointer;
+    box-shadow: 0px 0px 9px -4px rgba(225,225,225,0.85);
+    -webkit-box-shadow: 0px 0px 9px -4px rgba(225,225,225,0.85);
+    -moz-box-shadow: 0px 0px 9px -4px rgba(225,225,225,0.85);
+    transition: .5s ease;
+}
+
+.new-section:hover{
+    opacity: 1;
+    transform: scale(1.05);
+    transition: .5s ease;
+}
+
+.deadlines{
+    padding: 2px;
+    max-height: 90%;
+    max-width: 100%;
+    overflow: auto;
+}
+
+.item-deadline{
+    padding: 10px 0;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0px 0px 9px -4px rgba(0,0,0,0.35);
+    -webkit-box-shadow: 0px 0px 9px -4px rgba(0,0,0,0.35);
+    -moz-box-shadow: 0px 0px 9px -4px rgba(0,0,0,0.35);
+}
+
+.item-section{
+    display: flex;
+    padding: 10px 0;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid rgb(39, 40, 41, .1);
+    
+}
+
+.item-section:hover{
+    background-color: #272829;
+    color: white;
+}
+
+.check{
+    margin: 0 10px;
+}
+
+.item-section p, .item-deadline p{
+    width: 80%;
+    word-wrap: break-word;
+}
+
+.todo-item input[type=text]{
+    margin: 10px 0 5px;
+    border-radius: 8px;
+    background-color: transparent;
+    width: 100%;
+    border: 1px solid rgb(39, 40, 41, .1);
+    line-height: 20px;
+    padding: 10px 10px;
+}
+
+.todo-item input[type=submit]{
+    display: none;
+}
